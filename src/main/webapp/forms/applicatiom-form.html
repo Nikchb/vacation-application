@@ -1,0 +1,77 @@
+<form name="applicationForm">
+  <div class="form-group">      
+    <label for="applicantName">Applicant name</label>
+    <input class="form-control"
+           cam-variable-type="String"
+           cam-variable-name="applicantName"
+           name="applicantName"
+           readonly />
+  </div>
+    <div class="form-group">      
+    <label for="applicantSurname">Applicant surname</label>
+    <input class="form-control"
+           cam-variable-type="String"
+           cam-variable-name="applicantSurname"
+           name="applicantSurname"
+           readonly />
+  </div>
+  <div class="input-group">      
+    <label for="vacationStart">Vacation start</label>
+    <input type="text"
+    	   class="form-control"
+           cam-variable-type="Date"
+           cam-variable-name="vacationStart"
+           name="vacationStart"
+           uib-datepicker-popup="yyyy-MM-dd'T'HH:mm:ss"
+       	   is-open="dateFieldOpened1"
+       	   readonly />
+	<span class="input-group-btn">
+	    <button type="button"
+	            class="btn btn-default"
+	            ng-click="open1($event)">
+	      <i class="glyphicon glyphicon-calendar"></i>
+	    </button>
+	</span>
+  </div>
+  <div class="input-group">
+    <label for="vacationEnd">Vacation end</label>
+    <input type="text"
+    	   class="form-control"
+           cam-variable-type="Date"
+           cam-variable-name="vacationEnd"
+           name="vacationEnd"
+           uib-datepicker-popup="yyyy-MM-dd'T'HH:mm:ss"
+           is-open="dateFieldOpened2"
+           readonly />
+	<span class="input-group-btn">
+	    <button type="button"
+	            class="btn btn-default"
+	            ng-click="open2($event)">
+	      <i class="glyphicon glyphicon-calendar"></i>
+	    </button>
+	</span>
+  </div>
+    <div class="form-group">
+    <label for="directChief">Direct chief</label>
+    <select class="form-control"
+    		cam-variable-name="directChief" 
+    		cam-variable-type="String" 
+    		cam-choices="usersMap"
+    		name="directChief"/>
+  </div>  
+</form>
+
+<script cam-script type="text/form-script">
+  $scope.open1 = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.dateFieldOpened1 = true;
+  };
+  $scope.open2 = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.dateFieldOpened2 = true;
+  };
+</script>

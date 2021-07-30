@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_0vxn9gh" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.7.0">
+  <decision id="DefineChiefGroupDMN" name="Define chief group">
+    <decisionTable id="DecisionTable_18q3fa5" hitPolicy="FIRST">
+      <input id="Input_1" label="Applicant group" biodi:width="278">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>applicantGroup</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Chief group" name="chiefGroup" typeRef="string" />
+      <rule id="DecisionRule_1611x8u">
+        <inputEntry id="UnaryTests_1g1qbpo">
+          <text>"finance-department-workers"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h6d3vt">
+          <text>"finance-department-chief"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mcp9sj">
+        <inputEntry id="UnaryTests_0c94ett">
+          <text>"accounting-department-workers"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f0pp83">
+          <text>"accounting-department-chief"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d03933">
+        <inputEntry id="UnaryTests_0jq00bm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wcd8qk">
+          <text>"CEO"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="DefineChiefGroupDMN">
+        <dc:Bounds height="80" width="180" x="150" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
